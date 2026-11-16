@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jelly Up</title>
-<meta name="description" content="A friend challenged you in Jelly Up.">
-<meta property="og:title" content="Jelly Up — a friend challenged you">
+<title>JellyUp</title>
+<meta name="description" content="A friend challenged you in JellyUp.">
+<meta property="og:title" content="JellyUp — a friend challenged you">
 <meta property="og:description" content="Tap to open the challenge in the game.">
 <meta name="robots" content="noindex">
 <style>
@@ -56,15 +56,15 @@
 <body>
 <main>
   <div class="jelly" aria-hidden="true"></div>
-  <h1 id="title">Jelly Up</h1>
+  <h1 id="title">JellyUp</h1>
   <p id="lead">A friend challenged you. Tap to open it in the game.</p>
-  <a id="open" class="btn primary" href="jellyup://c/">Open in Jelly Up</a>
+  <a id="open" class="btn primary" href="jellyup://c/">Open in JellyUp</a>
 
   <section class="card" id="manual">
     <h2 id="manual-title">Didn't open?</h2>
     <ol>
       <li id="step1">Copy the code below.</li>
-      <li id="step2">Open Jelly Up and tap League › Paste a code.</li>
+      <li id="step2">Open JellyUp and tap League › Paste a code.</li>
     </ol>
     <div class="code" id="code"></div>
     <button class="btn secondary" id="copy" type="button">Copy the code</button>
@@ -81,19 +81,19 @@
   code = code.replace(/[^\p{L}\p{N}._\-]/gu, "").slice(0, 4000);
 
   var tr = (navigator.language || "").toLowerCase().indexOf("tr") === 0;
-  var group = /^JKP-/.test(code);
+  var group = /^JUP-/.test(code);
   var t = tr ? {
     lead: group ? "Bir arkadaşın seni grubuna çağırdı. Dokun, oyunda katıl." : "Bir arkadaşın sana meydan okudu. Dokun, oyunda aç.",
-    open: "Jöle Kule'de aç", manual: "Açılmadı mı?", step1: "Aşağıdaki kodu kopyala.",
-    step2: group ? "Jöle Kule'yi aç, Grup › Kod yapıştır'a dokun." : "Jöle Kule'yi aç, Lig › Kod yapıştır'a dokun.",
+    open: "JellyUp'ta aç", manual: "Açılmadı mı?", step1: "Aşağıdaki kodu kopyala.",
+    step2: group ? "JellyUp'ı aç, Grup › Kod yapıştır'a dokun." : "JellyUp'ı aç, Lig › Kod yapıştır'a dokun.",
     copy: "Kodu kopyala", copied: "Kopyalandı ✓", stores: "Yakında App Store ve Google Play'de.",
-    none: "Bu linkte kod yok. Arkadaşından linki yeniden göndermesini iste.", title: "Jöle Kule"
+    none: "Bu linkte kod yok. Arkadaşından linki yeniden göndermesini iste.", title: "JellyUp"
   } : {
     lead: group ? "A friend invited you to their group. Tap to join in the game." : "A friend challenged you. Tap to open it in the game.",
-    open: "Open in Jelly Up", manual: "Didn't open?", step1: "Copy the code below.",
-    step2: group ? "Open Jelly Up and tap Group › Paste a code." : "Open Jelly Up and tap League › Paste a code.",
+    open: "Open in JellyUp", manual: "Didn't open?", step1: "Copy the code below.",
+    step2: group ? "Open JellyUp and tap Group › Paste a code." : "Open JellyUp and tap League › Paste a code.",
     copy: "Copy the code", copied: "Copied ✓", stores: "Coming soon to the App Store and Google Play.",
-    none: "This link has no code. Ask your friend to send it again.", title: "Jelly Up"
+    none: "This link has no code. Ask your friend to send it again.", title: "JellyUp"
   };
   document.documentElement.lang = tr ? "tr" : "en";
   document.title = t.title;
