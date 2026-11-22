@@ -78,7 +78,8 @@
   var raw = location.hash.replace(/^#/, "");
   var code = "";
   try { code = decodeURIComponent(raw); } catch (e) { code = raw; }
-  code = code.replace(/[^\p{L}\p{N}._\-]/gu, "").slice(0, 4000);
+  // "~" joins a code to its signature: without it the signature would read as part of the name or path.
+  code = code.replace(/[^\p{L}\p{N}._~\-]/gu, "").slice(0, 4000);
 
   var tr = (navigator.language || "").toLowerCase().indexOf("tr") === 0;
   var group = /^JUP-/.test(code);
